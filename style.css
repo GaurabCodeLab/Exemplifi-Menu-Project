@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    background-color: #001489;
+}
+
+.main{
+    background-color: #f88e74;
+}
+
+.container{
+    background-color: white;
+}
+
+#product-menu{
+    color: white;
+}
+
+.nav-item{
+   padding: 0.5rem 2rem;
+    border-right: 1px solid gray;
+}
+
+.icon{
+    background-color: #f88e74;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.card-img-top{
+    height: 7rem;
+}
+
+.card{
+    border: none;
+    color: #001489;
+    text-align: center;
+}
+
+@media (max-width : 991px){
+    #menu-img{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .nav-item{
+        display: flex;
+        gap: 1rem;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid gray;
+        border-right: 0;
+    }
+    .line-break{
+        display: none;
+    }
+}
