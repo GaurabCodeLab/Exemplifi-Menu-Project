@@ -1,3 +1,4 @@
+// Selecting all necessary HTML elements
 const productSection = document.querySelector(".product-section");
 const recipesSection = document.querySelector(".recipes-section");
 const tipsSection = document.querySelector(".tips-section");
@@ -14,6 +15,7 @@ const productCaret = document.querySelector(".product-caret");
 const holidayCaret = document.querySelector(".holiday-caret");
 const storyCaret = document.querySelector(".story-caret");
 
+// Function to set all carets to down position
 const allCaretDown = ()=>{
   productCaret.classList.add("bi-caret-down");
   holidayCaret.classList.add("bi-caret-down");
@@ -23,6 +25,7 @@ const allCaretDown = ()=>{
   storyCaret.classList.remove("bi-caret-up");
 }
 
+// Function to handle interactions with product menu
 const productMenuInteraction = () => {
   productMenu.style.color = "#63bfec";
   recipesMenu.style.color = "white";
@@ -38,6 +41,7 @@ const productMenuInteraction = () => {
   productCaret.classList.add("bi-caret-up");
 };
 
+// Function to handle interactions with recipes menu
 const recipesMenuInteraction = () => {
   productMenu.style.color = "white";
   recipesMenu.style.color = "#63bfec";
@@ -52,6 +56,7 @@ const recipesMenuInteraction = () => {
   allCaretDown();
 };
 
+// Function to handle interactions with tips menu
 const tipsMenuInteraction = () => {
   productMenu.style.color = "white";
   recipesMenu.style.color = "white";
@@ -66,6 +71,7 @@ const tipsMenuInteraction = () => {
   allCaretDown();
 };
 
+// Function to handle interactions with holiday menu
 const holidayMenuInteraction = () => {
   productMenu.style.color = "white";
   recipesMenu.style.color = "white";
@@ -81,6 +87,7 @@ const holidayMenuInteraction = () => {
   holidayCaret.classList.add("bi-caret-up")
 };
 
+// Function to handle interactions with story menu
 const storyMenuInteraction = () => {
   productMenu.style.color = "white";
   recipesMenu.style.color = "white";
@@ -96,6 +103,7 @@ const storyMenuInteraction = () => {
   storyCaret.classList.add("bi-caret-up")
 };
 
+// Function to remove click event listeners from menus
 const removeClickListeners = ()=>{
   productMenu.removeEventListener("click", productMenuInteraction);
   recipesMenu.removeEventListener("click", recipesMenuInteraction);
@@ -104,6 +112,7 @@ const removeClickListeners = ()=>{
   storyMenu.removeEventListener("click", storyMenuInteraction);
 };
 
+// Function to remove hover event listeners from menus
 const removeHoverListeners = ()=>{
   productMenu.removeEventListener("mouseover", productMenuInteraction);
   recipesMenu.removeEventListener("mouseover", recipesMenuInteraction);
@@ -112,9 +121,12 @@ const removeHoverListeners = ()=>{
   storyMenu.removeEventListener("mouseover", storyMenuInteraction);
 }
 
+// Function to handle menu interactions based on window size
 const menuInteraction = () => {
   if (window.innerWidth >= 991) {
     removeClickListeners();
+
+    // Adding hover event listeners for larger screens
     productMenu.addEventListener("mouseover", productMenuInteraction);
     recipesMenu.addEventListener("mouseover", recipesMenuInteraction);
     tipsMenu.addEventListener("mouseover", tipsMenuInteraction);
@@ -122,6 +134,8 @@ const menuInteraction = () => {
     storyMenu.addEventListener("mouseover", storyMenuInteraction);
   } else {
     removeHoverListeners();
+
+    // Adding click event listeners for smaller screens
     productMenu.addEventListener("click", productMenuInteraction);
     recipesMenu.addEventListener("click", recipesMenuInteraction);
     tipsMenu.addEventListener("click", tipsMenuInteraction);
@@ -130,5 +144,6 @@ const menuInteraction = () => {
   }
 };
 
+// Initialize menu interactions on window load and resize
 window.addEventListener("load", menuInteraction);
 window.addEventListener("resize", menuInteraction);

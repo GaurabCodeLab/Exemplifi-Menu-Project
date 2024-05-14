@@ -51,6 +51,10 @@ a{
     border-right: none;
 }
 
+.navbar-toggler{
+    background-color: #6dcff6;
+}
+
 #icon, .icon{
     height: 0.5rem;
     width: 0.5rem;
